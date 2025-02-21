@@ -22,22 +22,28 @@
 </head>
 <body>
     <div class = "MyDiv" id = "MyDiv"> this div change its color</div>
+    <button class = "MyButton" id = "MyButton">click me</button>
     <script>
+
+        document.getElementById("MyButton").addEventListener("click", changeColor);
+
         var isCliced = false;
-        function changeColor(element)
+        function changeColor()
         {
+            document.getElementById("MyDiv"); 
             if(isCliced)
             {   
-                element.style.background = 'red';
+                document.getElementById("MyDiv").style.background = 'red';
                 isCliced = false;
             }
             else
             {
-                element.style.background = 'blue';
+                document.getElementById("MyDiv").style.background = 'blue';
                 isCliced = true;
             }
         }
+
     </script>
-    <button class = "MyButton" onclick="changeColor(document.getElementById('MyDiv'))">click me</button>
+
 </body>
 </html>
