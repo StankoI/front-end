@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .MyDiv{
+            border: 3px solid black;
+            background: blue;
+            height: 35px;
+            width:fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* .MyButton{
+
+        } */
+    </style>
+</head>
+<body>
+    <div class = "MyDiv" id = "MyDiv"> this div change its color</div>
+    <script>
+        var isCliced = false;
+        function changeColor(element)
+        {
+            if(isCliced)
+            {   
+                element.style.background = 'red';
+                isCliced = false;
+            }
+            else
+            {
+                element.style.background = 'blue';
+                isCliced = true;
+            }
+        }
+    </script>
+    <button class = "MyButton" onclick="changeColor(document.getElementById('MyDiv'))">click me</button>
+</body>
+</html>
