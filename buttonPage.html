@@ -30,15 +30,17 @@
         var isCliced = false;
         function changeColor()
         {
+            var elem = document.getElementById("MyDiv");
+
             document.getElementById("MyDiv"); 
             if(isCliced)
             {   
-                document.getElementById("MyDiv").style.background = 'red';
+                elem.style.background = 'red';
                 isCliced = false;
             }
             else
             {
-                document.getElementById("MyDiv").style.background = 'blue';
+                elem.style.background = 'blue';
                 isCliced = true;
             }
         }
