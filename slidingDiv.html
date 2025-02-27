@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            height: 1000px;
+            position: relative;
+        }
+
+        .MyDiv{
+            width: 30%;
+            height: 100%;
+            position: fixed;
+            background: gray;
+            position: absolute;
+            left: -32%;
+            transition: left 3s;
+        }
+
+        #open{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+
+        #close{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "MyDiv", id="MyDiv">
+            Sliding
+        <button id = "close">close</button>
+    </div>
+    <button id = "open">open</button>
+    <script>
+        document.getElementById("open").addEventListener("click", showDiv);
+        document.getElementById("close").addEventListener("click", hideDiv);
+        
+        let el = document.getElementById("MyDiv");
+        function showDiv()
+        {
+            el.style.left = "0%"; 
+        }
+
+        function hideDiv()
+        {
+            el.style.left = "-32%";
+        }
+        
+    </script>
+</body>
+</html>
