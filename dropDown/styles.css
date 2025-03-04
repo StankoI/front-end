@@ -1,0 +1,94 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.dropDown{
+    position: absolute;
+    /* transform: translateY(-50%);
+    width: auto;
+    height: auto; */
+}
+
+.show{
+    position: absolute;
+    /* transform: translateY(-50%); */
+    /* width: 200px; */
+    /* height: 20px; */
+    background: black;
+    display: grid;
+    grid-template-columns: 100px 150px 20px;
+    grid-template-rows: 20px;
+    border: 2px solid black;
+}
+
+.date{
+    position: absolute;
+    top:0; 
+    visibility: hidden;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    grid-column: 2/3;
+}
+
+.text{
+    grid-column: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: gray;
+}
+
+.current{
+    visibility: visible;
+}
+
+.drop{
+    grid-column: 3/4;
+    /* overflow: visible; */
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.lift{
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    
+}
+
+.table{
+    position: absolute;
+    top:0;
+    display: grid;
+    grid-template-columns: 250px 20px;
+    background: black;
+    visibility: hidden;
+}
+
+.day{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/2;
+}
+
+.cur{
+    font-weight: bold;
+}
