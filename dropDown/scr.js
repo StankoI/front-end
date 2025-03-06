@@ -1,8 +1,10 @@
 
 // sega me murzi da go refaktoriram shte e utre
 
-document.getElementById("drop").addEventListener('click', () => {showWorkTimeTable()});
-document.getElementById("lift").addEventListener('click', () => {showToDayWorkTime()});
+let active = true;
+
+document.getElementById("drop").addEventListener('click', () => { showWorkTimeTable() });
+// document.getElementById("lift").addEventListener('click', () => {showToDayWorkTime()});
 
 let daysOfWeek = document.querySelectorAll('.date');
 let workTimeDays = document.querySelectorAll('.day');
@@ -14,39 +16,45 @@ console.log(workTimeTable);
 
 console.log(toDayWorkTime);
 
-function setData()
-{
-    daysOfWeek.forEach((day) => {day.classList.remove("current")});
+function setData() {
+    daysOfWeek.forEach((day) => { day.classList.remove("current") });
     let todayDate = new Date();
 
     let today = todayDate.getDay();
 
-    if(today === 0){
+    if (today === 0) {
         today = 6;
     }
-    else{
+    else {
         today--;
     }
     daysOfWeek[today].classList.add("current");
 
-    workTimeDays.forEach((day) => {day.classList.remove("cur")});
+    workTimeDays.forEach((day) => { day.classList.remove("cur") });
     workTimeDays[today].classList.add("cur");
-    
+
 }
 
 setData();
 
-function showWorkTimeTable()
-{
-    toDayWorkTime.style.visibility = "hidden";
-    workTimeTable.style.visibility = "visible";
+function showWorkTimeTable() {
+    // toDayWorkTime.style.visibility = "hidden";
+
+    if (active) {
+        workTimeTable.style.height = 0;
+        active = false;
+    }
+    else {
+        workTimeTable.style.height = 'auto';
+        active = true;
+    }
 }
 
-function showToDayWorkTime()
-{
-    toDayWorkTime.style.visibility = "visible";
-    workTimeTable.style.visibility = "hidden";
-}
+// function showToDayWorkTime()
+// {
+//     // toDayWorkTime.style.visibility = "visible";
+//     workTimeTable.classList.remove("active");
+// }
 
 
 

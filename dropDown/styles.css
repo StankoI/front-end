@@ -9,10 +9,8 @@ body{
 }
 
 .dropDown{
-    position: absolute;
-    /* transform: translateY(-50%);
-    width: auto;
-    height: auto; */
+    position: relative;
+    /* transform: translateX(-50%); */
 }
 
 .show{
@@ -20,6 +18,7 @@ body{
     /* transform: translateY(-50%); */
     /* width: 200px; */
     /* height: 20px; */
+    overflow: hidden;
     background: black;
     display: grid;
     grid-template-columns: 100px 150px 20px;
@@ -58,9 +57,10 @@ body{
     border: 0;
     color: white;
     cursor: pointer;
+    overflow: hidden;
 }
 
-.lift{
+/* .lift{
     background: transparent;
     border: 0;
     color: white;
@@ -70,22 +70,36 @@ body{
     grid-column-start: 2;
     grid-column-end: 3;
     
-}
+} */
 
 .table{
+    height: 0;
     position: absolute;
-    top:0;
+    top:24px;
     display: grid;
     grid-template-columns: 250px 20px;
+    /* grid-template-rows: 0fr; */
+    /* overflow: hidden; */
     background: black;
-    visibility: hidden;
+    /* visibility: hidden; */
+    transition: height 0.5s;
+}
+/* 
+.droper{
+    position: absolute;
+    width: 270px;
+    overflow: hidden;
+    top: 24px; 
+} */
+
+.active{
+    height: auto;
 }
 
 .day{
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:end;
     grid-column: 1/2;
 }
 
